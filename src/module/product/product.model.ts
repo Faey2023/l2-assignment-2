@@ -11,7 +11,10 @@ const productSchema = new Schema<TProduct>(
     quantity: { type: Number, required: true },
     inStock: { type: Boolean, required: true },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    versionKey: false,
+  }
 );
 
 const Product = model<TProduct>('Product', productSchema);
